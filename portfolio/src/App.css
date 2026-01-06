@@ -1,0 +1,129 @@
+/* --- MODERN DARK NEON THEME 🌑 --- */
+:root {
+  --bg-dark: #0f172a;
+  --text-main: #f8fafc;
+  --primary: #38bdf8;  /* Sky Blue */
+  --secondary: #a855f7; /* Purple */
+  --accent: #f472b6;    /* Pink */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- ANIMATED BACKGROUND BLOBS --- */
+.background-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.15), transparent 25%),
+              radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 25%);
+}
+
+/* --- GLASS CARD UPGRADE --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* --- TEXT GRADIENT --- */
+.gradient-text {
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- HERO IMAGE - CLEAN NEON PULSE --- */
+.hero-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* एकदम गोल */
+  object-fit: cover;
+  object-position: top;
+
+  /* साफ-सुथरा नीओन बॉर्डर */
+  border: 4px solid var(--primary); /* Sky Blue Color */
+  background-color: var(--bg-dark); /* फोटो के पीछे का बैकग्राउंड */
+  padding: 5px; /* बॉर्डर और फोटो के बीच थोड़ी जगह */
+
+  /* चमकने वाला एनिमेशन */
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+  animation: pulseGlow 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* माउस ले जाने पर थोड़ा बड़ा होगा */
+.hero-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* धीरे-धीरे चमकने (सांस लेने) का एनिमेशन */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+    border-color: var(--primary);
+  }
+  50% {
+    /* बीच में चमक बढ़ जाएगी और हल्का पर्पल मिक्स होगा */
+    box-shadow: 0 0 60px rgba(56, 189, 248, 0.8), 0 0 30px rgba(168, 85, 247, 0.6);
+    border-color: var(--secondary);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+    border-color: var(--primary);
+  }
+}
+/* --- NAVBAR --- */
+.navbar-glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- SOCIAL BUTTONS --- */
+.social-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-decoration: none;
+}
+.social-btn:hover {
+  background: var(--primary);
+  color: #000;
+  transform: translateY(-3px);
+}
